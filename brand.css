@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 body {
     text-align: center;
     overflow-x: hidden;
@@ -23,6 +27,18 @@ body {
     h2 {
         font-size: 2rem;
     }
+    #buttons {
+        margin-top: 7%;
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-widgets{
+        margin: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -32,6 +48,18 @@ body {
     
     h2 {
         font-size: 1.5rem;
+    }
+    #buttons {
+        margin-top: 7%;
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-widgets{
+        margin: 0;
     }
 }
 .testimonials{
@@ -143,10 +171,35 @@ h3 {
     .note {
         width: 45%;
     }
+    #buttons {
+        margin-top: 7%;
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-widgets{
+        margin: 0;
+    }
+    
 }
 
 @media (max-width: 480px) {
     .note {
         width: 100%;
+    }
+    #buttons {
+        margin-top: 7%;
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-widgets{
+        margin: 0;
     }
 }

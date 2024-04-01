@@ -42,38 +42,45 @@ async function dataTable() {
   console.log(currentItems);
   
   document.getElementById("product_container").innerHTML = currentItems.map(products =>
-    `<div class="product">
+    `<div class="product" >
         <h2>${products.name}</h2>
         <img class="image" src="${products.imageSrc}" alt="${products.name}">
         <h3>Description</h3>
         <p class="discription">${products.description}</p>
         <h3>Notes de tête</h3>
         <div class="notes">
-          ${products.tete ? Object.values(products.tete).map(note => `
-            <div class="note">
-                <img src="${note.imgSrc}" alt="${note.name}">
-                <p>${note.one}</p>
+        ${Object.keys(products.tete).length === 0 ? '<p>vide</p>' :
+          Object.values(products.tete).map(note => `
+            <div class="note" >
+              <img src="${note.imgSrc}" alt="${note.name}">
+              <p>${note.one}</p>
             </div>
-          `).join('') : ''}
-        </div>
-        <h3>Notes de coeur</h3>
-        <div class="notes">
-          ${products.coeur ? Object.values(products.coeur).map(note => `
+          `).join('')
+        }
+      </div>
+      <h3>Notes de coeur</h3>
+      <div class="notes">
+        ${Object.keys(products.coeur).length === 0 ? '<p>vide</p>' :
+          Object.values(products.coeur).map(note => `
             <div class="note">
-                <img src="${note.imgSrc}" alt="${note.cone}">
-                <p>${note.cone}</p>
+              <img src="${note.imgSrc}" alt="${note.cone}">
+              <p>${note.cone}</p>
             </div>
-          `).join('') : ''}
-        </div>
-        <h3>Notes de fond</h3>
-        <div class="notes">
-          ${products.fond ? Object.values(products.fond).map(note => `
+          `).join('')
+        }
+      </div>
+      <h3>Notes de fond</h3>
+      <div class="notes">
+        ${Object.keys(products.fond).length === 0 ? '<p>vide</p>' :
+          Object.values(products.fond).map(note => `
             <div class="note">
-                <img src="${note.imgSrc}" alt="${note.fone}">
-                <p>${note.fone}</p>
+              <img src="${note.imgSrc}" alt="${note.fone}">
+              <p>${note.fone}</p>
             </div>
-          `).join('') : ''}
-        </div>
+          `).join('')
+        }
+      </div>
+      
     </div>`
   ).join('');
 }
