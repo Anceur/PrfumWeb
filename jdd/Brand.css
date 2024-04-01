@@ -1,0 +1,99 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the Product Container */
+.product {
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Styling for Chanel Title */
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for Section Titles */
+h3 {
+    color: #555;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the Notes Sections */
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Styling for Individual Note */
+.note {
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+}
+
+.note img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.note p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+/* pagination-example.component.css */
+
+
+  
+  /* Add these styles in your marque.component.css or your global styles file */
+
+.row {
+    margin: 20px; /* Adjust margin as needed */
+  }
+  
+  .btn-group {
+    display: flex;
+  }
+  
+  .btn {
+    margin-right: 5px; /* Adjust margin as needed */
+    cursor: pointer;
+  }
+  
+  .btn.active {
+    background-color: #007bff; /* Change to your desired active background color */
+    color: #fff; /* Change to your desired active text color */
+  }
+  
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .product {
+        width: 95%;
+    }
+
+    .note {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .note {
+        width: 100%;
+    }
+}
