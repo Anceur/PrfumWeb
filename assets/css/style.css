@@ -29,7 +29,7 @@ body{
   overflow-y: scroll;
 }
 header {
-  background-color: rgba(0, 0, 0, 0.826);
+  background-color: rgb(0, 0, 0);
   color: #fff;
   z-index: 1000;
 }
@@ -118,7 +118,7 @@ header::after {
 }
 
 .navbar-brand img {
-  width: 135px;
+  width: 150px;
 }
 
 .navbar-collapse .search-form input[type="text"] {
@@ -228,22 +228,23 @@ form button.btn-primary:hover {
 }
 
 .hero .single-slide h1 {
+  font-size: 6.5rem;
+  text-align: center;
+  color: transparent; /* Make the text transparent */
+  -webkit-text-stroke: 2px white; /* Stroke around the text */ /* Add shadows to create the border effect */
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.hero .single-slide h2 {
+  text-align: center;
   color: #fff;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.56);
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
 }
-
-
-.hero .single-slide h1 {
-  color: #fff;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.56);
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
 
 .hero .container {
   position: relative;
@@ -257,15 +258,6 @@ form button.btn-primary:hover {
 
 .hero .slide-content span {
   color: #eed815;
-}
-
-.hero .slide-content h1 {
-  color: #fff;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.56);
-  text-transform: uppercase;
-  -webkit-transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
-          transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
-  font-weight: bold;
 }
 
 /*-----------------------------------
@@ -380,12 +372,12 @@ form button.btn-primary:hover {
     1 - Testimonials
 ------------------------------------*/
 .testimonial-and-clients {
-  background: url(../images/test-clients-bg.png) center center/cover no-repeat #000000;
+  background: url(../images/test-clients-bg.png) center center/cover no-repeat rgb(31, 31, 31);
   aspect-ratio: 3/2;
 }
 
 .testimonials {
-  padding: 30px 0 85px;
+  padding: 1px 0 5px;
   color: #fff;
   border-bottom: 1px solid #ab9e18;
 }
@@ -484,7 +476,6 @@ footer::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(../images/shop.jpg) center center/cover no-repeat;
   z-index: -1;
 }
 
@@ -494,7 +485,6 @@ footer::before {
     1 - Footer Widgets
 ------------------------------------*/
 .footer-widgets {
-  margin: 0 10%;
   padding: 100px 0;
   display: flex;
   width: 100%;

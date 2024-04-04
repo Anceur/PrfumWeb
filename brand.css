@@ -5,7 +5,7 @@ html{
 body {
     text-align: center;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 /* Styling for the Product Container */
@@ -13,10 +13,11 @@ body {
 .product {
     width: 95%;
     border-radius: 2rem;
-    margin: 2rem auto;
+    margin: 6rem auto;
     padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.54);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border:2px solid #ffffff;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 5px 20px #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -161,6 +162,59 @@ h3 {
     background-color: #26264b;
     transform: scale(1.1);
 }
+
+.menu-btn-mobile {
+    padding: 5px;
+    display: none; 
+    /* Initially hide the menu button */
+  }
+  .menu-btn-mobile svg{
+    fill: #ffffff; 
+    /* Initially hide the menu button */
+  }
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1;
+  }
+  
+  .sidebar li {
+    width: 100%;
+  }
+  
+  .sidebar a {
+    width: 100%;
+  }
+  
+  /* Media Query for Small Screens (Mobile) */
+  @media(max-width: 800px) {
+  
+    .navbar-nav {
+        display: none; /* Hide the navbar links */
+    }
+  
+    .menu-btn-mobile {
+        display: block; /* Display the menu button */
+    }
+  }
+  @media(max-width: 600px){
+    .sidebar{
+    width: 100%;
+    }
+  }
+  
 
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {

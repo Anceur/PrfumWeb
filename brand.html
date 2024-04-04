@@ -6,6 +6,8 @@ overflow-y: scroll;>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortout icon" type="x-icon" href="assets/images/logojdd.png">
     <title>Good Flower</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/loader/loaders.css">
@@ -18,19 +20,29 @@ overflow-y: scroll;>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="/brand.css">
+    <link rel="stylesheet" href="brand.css">
 </head>
 <body>
     <header class="position-absolute w-100">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
+                <ul class="sidebar">
+                    <li class="menu-btn-mobile" onclick="hideSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="#fff">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="hideSidebar()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand.html" onclick="hideSidebar()">Brand</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer" onclick="hideSidebar()">Contact Us</a></li>
+                </ul>
                 <a class="navbar-brand" href="index.html"><img src="assets/images/logojdd.png" alt="Multipurpose"></a>
                 <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="brand.html">Brand</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="brand.html">Brand</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="#footer">Contact Us</a></li>
                     </ul>
                     <form class="bg-white search-form" method="get" id="searchform">
                         <div class="input-group">
@@ -41,10 +53,17 @@ overflow-y: scroll;>
                             </span>
                         </div>
                     </form>
-                </div>
+                    <!-- Button to Hide Sidebar (visible on mobile) -->
+                 </div>
+                 <li class="menu-btn-mobile" onclick="showSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" >
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                 </li>
             </nav>
         </div>
     </header>
+    
     <section class="testimonial-and-clients">
         <div class="container">
             <div class="testimonials">
@@ -70,7 +89,7 @@ overflow-y: scroll;>
             
         </div>
     </section>
-    <footer>
+    <footer id="footer">
         <footer>
             <!-- Widgets Start -->
             <div class="footer-widgets">
@@ -136,6 +155,16 @@ overflow-y: scroll;>
           
         </footer>
     </footer>
+    <script>
+    function showSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none'
+     }
+    </script>
     <script type="module" src="configfirebase.js"></script>
     <script src="assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->

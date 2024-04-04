@@ -17,6 +17,7 @@ overflow-y: scroll;>
     <title>Good Flower</title>
     <!-- Stylesheets & Fonts -->
     <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
         rel="stylesheet">
     <!-- Plugins Stylesheets -->
@@ -43,20 +44,40 @@ overflow-y: scroll;>
     <header class="position-absolute w-100">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logojdd.png" alt="Multipurpose"></a>
-                <!-- <input type="checkbox" id="check">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars"></i>
-                </label> -->
-                
+                <ul class="sidebar">
+                    <li class="menu-btn-mobile" onclick="hideSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="#fff">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="hideSidebar()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand.html" onclick="hideSidebar()">Brand</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer" onclick="hideSidebar()">Contact Us</a></li>
+                </ul>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Multipurpose"></a>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="brand.html">Brand</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="brand.html">Brand</a></li>
+                        <li class="nav-item-mobile"><a class="nav-link" href="#footer">Contact Us</a></li>
                     </ul>
-                
-                </div>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
+                                    value="Search">
+                            </span>
+                        </div>
+                    </form>
+                    <!-- Button to Hide Sidebar (visible on mobile) -->
+                 </div>
+                 <li class="menu-btn-mobile" onclick="showSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" >
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                 </li>
             </nav>
         </div>
     </header>
@@ -71,7 +92,8 @@ overflow-y: scroll;>
                             <div class="swiper-slide slide-content d-flex align-items-center">
                                 <div class="single-slide">
                                     <div class="content-overlay">
-                                        <h1>perfume<br>good flower</h1>
+                                        <h1>good flower</h1>
+                                        <h2>perfumerie</h2>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +114,7 @@ overflow-y: scroll;>
                     <p>"Découvrez l'attrait cool du luxe à moindre coût avec nos parfums clones.</p>
                 </div>
                 <div class="subscribe-btn" data-aos="fade-left" data-aos-delay="400" data-aos-offset="0">
-                    <a href="#" class="btn btn-primary">Visitez notre magasin</a>
+                    <a href="/brand.html" class="btn btn-primary">Visitez notre magasin</a>
                 </div>
             </div>
         </div>
@@ -183,7 +205,7 @@ overflow-y: scroll;>
                          notre engagement envers la satisfaction du client garantit une expérience transparente et personnalisée.
                          Faites-nous confiance pour un voyage à travers les sens, exprimant votre individualité avec style et élégance.
                     </p>
-                    <a href="#" class="btn btn-primary">Voir plus</a>
+                    <a href="/brand.html" class="btn btn-primary">Voir plus</a>
                 </div>
                 <div class="col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                     <div class="featured-img">
@@ -273,19 +295,19 @@ overflow-y: scroll;>
                     <p>"Découvrez l'attrait cool du luxe à moindre coût avec nos parfums clones.</p>
                 </div>
                 <div class="subscribe-btn" data-aos="fade-left" data-aos-delay="400" data-aos-offset="0">
-                    <a href="#" class="btn btn-primary">Visitez notre magasin</a>
+                    <a href="/brand.html" class="btn btn-primary">Visitez notre magasin</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- Call To Action 2 End -->
     <!-- Footer Start -->
-    <footer>
+    <footer id="footer">
         <!-- Widgets Start -->
         <div class="footer-widgets">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
+                    <div class="col-xl-3">
                         <div class="single-widget contact-widget" data-aos="fade-up" data-aos-delay="0">
                             <div class="media-body">
                                 <div class="maps" data-aos="fade-up" data-aos-delay="0">
@@ -345,7 +367,16 @@ overflow-y: scroll;>
       
     </footer>
     <!-- Footer Endt -->
-
+    <script>
+        function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+         }
+        </script>
     <script src="assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->
     <script src="assets/js/bootstrap.bundle.js"></script>

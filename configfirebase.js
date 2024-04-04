@@ -113,29 +113,48 @@ document.addEventListener('DOMContentLoaded', function(event) {
 })
 
 // Reference to the HTML form and input field
+// Reference to the HTML form and input field
 const searchForm = document.getElementById('searchform');
 const searchInput = document.getElementById('s');
 
 // Function to handle form submission
-searchForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent default form submission
-  performSearch();
-});
+searchForm.addEventListener('submit', handleFormSubmit);
 
 // Add 'input' event listener to the search input
-searchInput.addEventListener('input', function(event) {
-  performSearch();
-});
+searchInput.addEventListener('input', debounce(handleInput, 300)); // Adjust debounce delay as needed
 
+// Initialize Firebase and set up Firebase listeners
+// Your Firebase initialization code here...
+
+// Function to handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault(); // Prevent default form submission
+  performSearch();
+}
+
+// Function to handle input events
+function handleInput(event) {
+  performSearch();
+}
+
+// Function to perform search
 function performSearch() {
-  const searchQuery = searchInput.value.trim().toLowerCase(); // Get the search query
-  console.log(searchQuery);
-  selectedProduct = product.filter(item => item.name.toLowerCase().startsWith(searchQuery));
+  const searchTerm = searchInput.value.trim().toLowerCase(); // Get the search term
+  console.log(searchTerm);
+  selectedProduct = product.filter(item => item.name.toLowerCase().startsWith(searchTerm));
   dataTable();
 }
 
-  
+// Function to debounce input events
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
 
-
-
-  
+// Pagination logic (if any) goes here...
+// Ensure that pagination does not interfere with the search functionality

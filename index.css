@@ -3,7 +3,88 @@ html{
   overflow-y: scroll;
 
 }
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.menu-btn-mobile {
+  padding: 5px;
+  display: none; 
+  /* Initially hide the menu button */
+}
+.menu-btn-mobile svg{
+  fill: #ffffff; 
+  /* Initially hide the menu button */
+}
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 1;
+}
 
+.sidebar li {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+/* Media Query for Small Screens (Mobile) */
+@media(max-width: 800px) {
+
+  .navbar-nav {
+      display: none; /* Hide the navbar links */
+  }
+
+  .menu-btn-mobile {
+      display: block; /* Display the menu button */
+  }
+}
+@media(max-width: 600px){
+  .sidebar{
+  width: 100%;
+  }
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .product {
+      width: 95%;
+  }
+
+  .note {
+      width: 45%;
+  }
+  #buttons {
+      margin-top: 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 200px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .footer-widgets{
+      margin: 0;
+  }
+  
+}
 .position-absolute {
     position: absolute !important;
   }
@@ -36,11 +117,13 @@ html{
     min-height: 700px;
   }
   .hero .slide-content h1 {
-    margin-top: 100px;
+    font-size: 150px;
+    margin-top: 0px;
   }
-  
- 
-  
+  .hero .slide-content h2 {
+    font-size: 40px;
+    margin-top: 0px;
+  }
 }
 
 /*-----------------------------------
@@ -131,9 +214,6 @@ html{
     margin: 0 13px;
     order: 1;
   }
-  .hero .slide-content h1 {
-    font-size: 3.5rem;
-  }
   .hero .slide-content br {
     display: block;
   }
@@ -173,9 +253,6 @@ html{
   .hero .slide-content {
     min-height: 100vh;
   }
-  .hero .slide-content h1 {
-    font-size: 5.5rem;
-  }
   .hero .slide-content br {
     display: block;
   }
@@ -193,7 +270,7 @@ html{
 ------------------------------------*/
 @media (min-width: 1200px) {
   .navbar-brand img {
-    width: 100px;
+    width: 200px;
   }
   .title h1 {
     font-size: 58px;
