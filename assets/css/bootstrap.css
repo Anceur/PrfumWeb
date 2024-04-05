@@ -2308,7 +2308,7 @@ textarea.form-control {
   content: "";
   width: calc(100% + 2px);
   height: 100%;
-  background-color: rgba(24, 9, 53, 0.77);
+  /* background-color: rgba(24, 9, 53, 0.77); */
   border-top-right-radius: 1.5625rem;
   border-bottom-left-radius: 1.5625rem;
   position: absolute;
@@ -3369,6 +3369,8 @@ input[type="button"].btn-block {
 .input-group > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  color: black;
+  font-weight: 700;
 }
 
 .input-group > .form-control:not(:first-child),
