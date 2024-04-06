@@ -116,12 +116,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
 // Reference to the HTML form and input field
 const searchForm = document.getElementById('searchform');
 const searchInput = document.getElementById('s');
+const searchSubmitButton = document.getElementById('searchsubmit');
 
 // Function to handle form submission
 searchForm.addEventListener('submit', handleFormSubmit);
-
-// Add 'input' event listener to the search input
-searchInput.addEventListener('input', debounce(handleInput, 300)); // Adjust debounce delay as needed
+searchSubmitButton.addEventListener('click', handleSearch);
 
 // Initialize Firebase and set up Firebase listeners
 // Your Firebase initialization code here...
@@ -132,8 +131,8 @@ function handleFormSubmit(event) {
   performSearch();
 }
 
-// Function to handle input events
-function handleInput(event) {
+// Function to handle search button click
+function handleSearch() {
   performSearch();
 }
 
@@ -144,6 +143,7 @@ function performSearch() {
   selectedProduct = product.filter(item => item.name.toLowerCase().startsWith(searchTerm));
   dataTable();
 }
+
 
 // Function to debounce input events
 function debounce(func, delay) {

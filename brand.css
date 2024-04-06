@@ -198,7 +198,7 @@ form{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    z-index: 1;
+    z-index: 10;
   }
   
   .sidebar li {
